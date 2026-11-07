@@ -1,7 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// Plain Vite + React setup. Nothing custom yet.
+// BASE_PATH lets the same code run locally ("/") and on GitHub Pages ("/promptlab/").
+// The GitHub deploy workflow sets it; locally you don't need to do anything.
 export default defineConfig({
+  base: process.env.BASE_PATH ?? "/",
   plugins: [react()],
 });

@@ -29,7 +29,8 @@ applyTheme(loadTheme());
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
+    {/* basename: on GitHub Pages the app lives under /promptlab/, locally under / */}
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <App />
     </BrowserRouter>
   </StrictMode>,
