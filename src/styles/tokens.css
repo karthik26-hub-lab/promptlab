@@ -1,0 +1,65 @@
+/*
+  DESIGN TOKENS
+  Every colour, font and spacing value in the app comes from here.
+  Rules: monochrome only + ONE red accent. No gradients, no shadows, no blur.
+*/
+
+:root {
+  /* ---- Type roles ---- */
+  --font-dot: "Doto", "Courier New", monospace;          /* app name, stage titles, big numbers */
+  --font-body: "Inter", system-ui, sans-serif;           /* reading text (light weight) */
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;/* labels, buttons, tags, nav, prompts */
+
+  --label-size: 11px;
+  --label-spacing: 0.12em;
+
+  /* ---- Spacing scale (4px base) ---- */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 64px;
+
+  --sidebar-w: 264px;
+  --content-max: 860px;
+  --radius: 0; /* sharp corners everywhere (chosen on 2026-11-08) */
+
+  /* ---- Motion: short and mechanical ---- */
+  --t-fast: 120ms;
+  --t-med: 200ms;
+  --ease: steps(4, end); /* stepped = "mechanical", never bouncy */
+}
+
+/* ---- DARK (default) ---- */
+:root,
+:root[data-theme="dark"] {
+  --bg: #0b0b0b;          /* page */
+  --surface: #131313;     /* cards */
+  --surface-2: #1b1b1b;   /* inputs, responses, hover */
+  --border: #2b2b2b;      /* 1px lines */
+  --border-strong: #444;  /* focused / emphasised lines */
+  --text: #ededeb;        /* main text */
+  --text-2: #9a9a96;      /* secondary text */
+  --text-3: #5e5e5b;      /* hints, disabled */
+  --grid-dot: #1f1f1f;    /* background dot grid */
+  --red: #e5232a;         /* THE accent. Use sparingly. */
+  --on-red: #ffffff;
+}
+
+/* ---- LIGHT ---- */
+:root[data-theme="light"] {
+  --bg: #efefec;
+  --surface: #f8f8f6;
+  --surface-2: #ffffff;
+  --border: #d4d4cf;
+  --border-strong: #9d9d98;
+  --text: #111111;
+  --text-2: #5c5c58;
+  --text-3: #9a9a95;
+  --grid-dot: #dcdcd7;
+  --red: #d71921;
+  --on-red: #ffffff;
+}

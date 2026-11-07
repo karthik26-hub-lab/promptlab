@@ -1,0 +1,188 @@
+/*
+  FORMS, NOTICES, LOADER, SECTION TITLES
+*/
+
+/* ---- Text inputs ---- */
+.input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+}
+
+.input:focus {
+  border-color: var(--border-strong);
+  outline: none;
+}
+
+.input:focus-visible {
+  outline: 1px solid var(--red);
+  outline-offset: 2px;
+}
+
+.input--mono {
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.input::placeholder {
+  color: var(--text-3);
+}
+
+.field-label {
+  display: block;
+  margin-bottom: var(--s2);
+}
+
+/* ---- Rows ---- */
+.key-row {
+  display: flex;
+  gap: var(--s2);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2);
+  margin-top: var(--s4);
+}
+
+.key-status {
+  margin-top: var(--s3);
+}
+
+.key-status__state {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  color: var(--text-2);
+}
+
+/* ---- Notices (results / errors) ---- */
+.notice {
+  margin-top: var(--s4);
+  padding: var(--s3) var(--s4);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+/* Errors: a red edge on the left, never a red background. */
+.notice--alert {
+  border-left: 2px solid var(--red);
+}
+
+/* ---- Section title: "01  YOUR GEMINI KEY" ---- */
+.settings-section {
+  margin-bottom: var(--s6);
+}
+
+.section-title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s3);
+  margin-bottom: var(--s3);
+  font-weight: 400;
+}
+
+.section-title__num {
+  font-size: 22px;
+  color: var(--text-3);
+}
+
+/* ---- Numbered steps ---- */
+.steps {
+  list-style: none;
+  margin: var(--s4) 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+
+.steps li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: var(--s3);
+  align-items: baseline;
+}
+
+.steps__num {
+  font-size: 20px;
+  color: var(--text-2);
+}
+
+/* ---- Privacy card ---- */
+.privacy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s4);
+}
+
+.privacy .label {
+  display: block;
+  color: var(--text-2);
+  margin-bottom: var(--s1);
+}
+
+/* ---- Small text bits ---- */
+.small {
+  font-size: 14px;
+}
+
+strong {
+  font-weight: 500;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 1px 4px;
+  border: 1px solid var(--border);
+}
+
+.link {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+
+.link:hover {
+  text-decoration-color: var(--red);
+}
+
+/* ---- Dot-matrix loader ---- */
+.dot-loader {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  margin-top: var(--s4);
+}
+
+.dot-loader__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 5px);
+  gap: 3px;
+}
+
+.dot-loader__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-3);
+  animation: dot-blink 810ms steps(1, end) infinite;
+}
+
+/* A dot is bright for a short moment, then dim again. */
+@keyframes dot-blink {
+  0% {
+    background: var(--text);
+  }
+  20% {
+    background: var(--text-3);
+  }
+}

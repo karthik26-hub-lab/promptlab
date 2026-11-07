@@ -1,0 +1,126 @@
+/*
+  SMALL UI PIECES
+  Buttons, cards, tags, dot progress, status dots, dotted dividers.
+*/
+
+/* ---- Card: flat surface, 1px border, no shadow ---- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--s5);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: 10px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.btn:disabled {
+  color: var(--text-3);
+  border-color: var(--border);
+  cursor: not-allowed;
+}
+
+/* Primary = the ONE most important action on a screen. Red. */
+.btn--primary {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--on-red);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
+}
+
+.btn--primary:disabled {
+  background: transparent;
+}
+
+/* Quiet = text-only, for secondary things like "Copy" */
+.btn--quiet {
+  border-color: transparent;
+  padding: 6px 8px;
+  color: var(--text-2);
+}
+
+.btn--quiet:hover:not(:disabled) {
+  background: transparent;
+  color: var(--text);
+}
+
+/* ---- Tag ---- */
+.tag {
+  display: inline-block;
+  padding: 2px 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  color: var(--text-2);
+}
+
+/* ---- Status dot (the little red indicator) ---- */
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  flex: none;
+}
+
+.status-dot--off {
+  background: var(--text-3);
+}
+
+.status-dot--on {
+  background: var(--text);
+}
+
+/* ---- Dot progress: a row of dots that fill in ---- */
+.dot-progress {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.dot-progress__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--text-3);
+  transition: background var(--t-fast) var(--ease);
+}
+
+.dot-progress__dot--filled {
+  background: var(--text);
+  border-color: var(--text);
+}
+
+.dot-progress__dot--current {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+/* ---- Dotted divider ---- */
+.dot-divider {
+  border: 0;
+  border-top: 1px dotted var(--border-strong);
+  margin: var(--s6) 0;
+}
