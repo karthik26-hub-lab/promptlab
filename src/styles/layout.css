@@ -190,8 +190,15 @@
 /* Previous / next stage buttons at the bottom of a stage */
 .stage-pager {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--s4);
+}
+
+/* Pager buttons hold long stage names, so they may wrap on small screens. */
+.stage-pager .btn {
+  white-space: normal;
+  max-width: 100%;
 }
 
 /* ---------------- Tablet ---------------- */
@@ -308,13 +315,46 @@
 
   .stage-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* minmax(0, 1fr): columns may shrink below their text width instead of overflowing */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2px;
   }
 
   .stage-link {
     padding: 6px var(--s2);
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+    min-width: 0;
   }
+
+  .stage-link__num {
+    font-size: 18px;
+  }
+
+  .stage-link__title {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Very narrow screens: one stage per row */
+@media (max-width: 440px) {
+  .stage-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page-head__title {
+    font-size: 34px;
+  }
+
+  .analogy__name {
+    font-size: 24px;
+  }
+
+  .analogy__num {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 720px) {
 
   .sidebar__section-label {
     display: none;

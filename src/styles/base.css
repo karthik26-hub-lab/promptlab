@@ -71,6 +71,7 @@ select {
   font-weight: 800;
   letter-spacing: 0.02em;
   line-height: 1.05;
+  overflow-wrap: anywhere; /* on tiny screens, break a long word rather than overflow */
 }
 
 /* Small uppercase mono: every label, button, tag and nav item */

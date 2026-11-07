@@ -6,6 +6,8 @@ Built for college students (18–22) who use chatbots but don't know why some pr
 Pure front-end: React + Vite + TypeScript. No backend, no accounts. Each learner uses their own free
 Gemini API key, which is stored only in their browser.
 
+**Try it live: https://karthik26-hub-lab.github.io/promptlab/**
+
 ## Run it
 
 You need [Node.js](https://nodejs.org) 20 or newer.
@@ -85,11 +87,12 @@ Block types: `section`, `text`, `points`, `nextWord`, `tour`, `beforeAfter`, `an
 - On the free tier Google may use prompts to improve its products. The app reminds learners not to type
   private information.
 
-## Hosting it later (optional)
+## Hosting
 
-`npm run build` makes a static site in `dist/` that any static host can serve (Netlify, Vercel,
-GitHub Pages…). Because the app uses page URLs like `/stage/2`, tell the host to send every path to
-`index.html` (Netlify: a `_redirects` file with `/* /index.html 200`).
+Every push to `main` deploys automatically to GitHub Pages (see `.github/workflows/deploy.yml`).
+The workflow builds with `BASE_PATH=/promptlab/` and copies `index.html` to `404.html` so links like
+`/promptlab/stage/2` work on refresh. To host elsewhere (Netlify, Vercel), run `npm run build` and serve `dist/`,
+sending every path to `index.html`.
 
 ## Ready for version 2
 

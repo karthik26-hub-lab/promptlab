@@ -388,6 +388,10 @@
   margin-bottom: var(--s4);
 }
 
+.analogy__head > div {
+  min-width: 0;
+}
+
 .analogy__num {
   font-size: 40px;
   color: var(--text-3);
@@ -490,5 +494,22 @@
   .anatomy__row {
     grid-template-columns: 1fr;
     gap: var(--s1);
+  }
+}
+
+/* Very narrow screens: tighten the next-word chart */
+@media (max-width: 440px) {
+  .next-word__row {
+    grid-template-columns: 76px auto 1fr;
+    gap: var(--s2);
+  }
+
+  .nw-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .next-word__bar {
+    gap: 3px;
   }
 }
