@@ -346,6 +346,20 @@
   padding: 6px 10px;
   text-align: left;
   vertical-align: top;
+  overflow-wrap: anywhere; /* long words wrap so the table fits narrow columns */
+}
+
+/* Inside side-by-side views, tables get a little tighter. */
+.compare .md-table,
+.before-after .md-table {
+  font-size: 13px;
+}
+
+.compare .md-table th,
+.compare .md-table td,
+.before-after .md-table th,
+.before-after .md-table td {
+  padding: 5px 7px;
 }
 
 .md-table th {
