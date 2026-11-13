@@ -142,6 +142,28 @@ export interface ExperimentBlock {
   b: { label: string; prompt: string };
 }
 
+/**
+  Instruction-placement test: the learner's instruction is sent twice,
+  once BEFORE a long article and once AFTER it, and the answers are compared.
+*/
+export interface PlacementBlock {
+  type: "placement";
+  heading?: string;
+  intro?: string;
+  articleTitle: string;
+  article: string;            // the long text (plain text or Markdown)
+  defaultInstruction: string;
+  saveAs: string;             // saved after a successful run (used to unlock the checkpoint)
+}
+
+/** A ready-made prompt the learner can copy. */
+export interface TemplateBlock {
+  type: "template";
+  heading?: string;
+  intro?: string;
+  text: string;
+}
+
 /** End-of-stage box: a short wrap-up and the button to the next stage. */
 export interface CheckpointBlock {
   type: "checkpoint";
@@ -165,4 +187,6 @@ export type Block =
   | CompareBlock
   | ReflectionBlock
   | ExperimentBlock
+  | PlacementBlock
+  | TemplateBlock
   | CheckpointBlock;

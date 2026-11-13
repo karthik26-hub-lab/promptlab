@@ -34,7 +34,7 @@ Other commands:
 | 01 What is a prompt? | Ready | What a model really does, a 10-skill tour, 5 before/after pairs. Works offline, no key. |
 | 02 Try it yourself | Ready | Learner sends their own plain prompt live, then reflects on what was missing. |
 | 03 Structure | Ready | Role, task, context, format, constraints + examples. Rebuild the Stage 2 prompt in the builder and compare. |
-| 04 Keywords & long context | Coming soon | Data structure ready (the `experiment` block already works). |
+| 04 Keywords & long context | Ready | 4 one-word experiments, how long context works, start-vs-end instruction test, carry-over summary template. |
 | 05 Judging prompts | Coming soon | |
 | 06 Real use & AI coding | Coming soon | |
 
@@ -77,7 +77,7 @@ Tools: Playground (single prompt, builder, compare two), Library, Progress (stre
 4. Your editor underlines any mistake (a missing field, a misspelled type) before you even run the app.
 
 Block types: `section`, `text`, `points`, `nextWord`, `tour`, `beforeAfter`, `analogy`, `anatomy`,
-`practice`, `builder`, `compare`, `reflection`, `experiment`, `checkpoint`. See `src/content/types.ts`.
+`practice`, `builder`, `compare`, `reflection`, `experiment`, `placement`, `template`, `checkpoint`. See `src/content/types.ts`.
 
 ## Privacy and the API key
 

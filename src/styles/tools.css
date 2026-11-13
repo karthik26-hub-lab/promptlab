@@ -238,3 +238,18 @@
     position: static;
   }
 }
+
+/* ---- Placement test: folded article ---- */
+.placement__article {
+  margin: var(--s4) 0;
+}
+
+.placement__article summary {
+  cursor: pointer;
+  color: var(--text-2);
+  padding: var(--s2) 0;
+}
+
+.placement__article summary:hover {
+  color: var(--text);
+}

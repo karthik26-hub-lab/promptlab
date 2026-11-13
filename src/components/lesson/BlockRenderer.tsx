@@ -12,6 +12,8 @@ import { ReflectionView } from "./ReflectionView";
 import { AnalogyView, AnatomyView } from "./StructureBlocks";
 import { TourView } from "./TourView";
 import { CompareBlockView, PracticeBlockView } from "./ToolBlocks";
+import { PlacementView } from "./PlacementView";
+import { CopyButton } from "../tools/CopyButton";
 
 export function BlockRenderer({ blocks, stageId }: { blocks: Block[]; stageId: number }) {
   // Sections, before/after pairs and building blocks are numbered automatically, in order.
@@ -59,6 +61,17 @@ export function BlockRenderer({ blocks, stageId }: { blocks: Block[]; stageId: n
                 <h3 className="lesson-h3">{block.heading}</h3>
                 <p className="muted lesson-intro">{block.intro}</p>
                 <CompareRunner labelA={block.a.label} labelB={block.b.label} initialA={block.a.prompt} initialB={block.b.prompt} />
+              </div>
+            );
+          case "placement":
+            return <PlacementView key={i} block={block} />;
+          case "template":
+            return (
+              <div key={i} className="lesson-block">
+                {block.heading && <h3 className="lesson-h3">{block.heading}</h3>}
+                {block.intro && <p className="muted lesson-intro">{block.intro}</p>}
+                <div className="prompt-box">{block.text}</div>
+                <CopyButton text={block.text} label="Copy template" />
               </div>
             );
           case "checkpoint":
